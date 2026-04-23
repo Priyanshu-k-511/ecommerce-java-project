@@ -78,4 +78,15 @@ public class UserDAO {
             return false;
         }
     }
+
+    public User getUserByEmail(String email) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            Query<User> query = session.createQuery("from User U where U.email = :email", User.class);
+            query.setParameter("email", email);
+            return query.uniqueResult();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

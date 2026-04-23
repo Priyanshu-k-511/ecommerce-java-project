@@ -14,4 +14,8 @@
         <location>/error.jsp</location>
     </error-page>
 
+    <!-- Product and Admin modules are JSP-driven in this architecture, mapped implicitly by container -->
+
+
+
 </web-app>
